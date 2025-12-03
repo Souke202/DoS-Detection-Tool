@@ -1,0 +1,36 @@
+# DoS Detection Tool Configuration
+
+# Network Monitoring Settings
+network:
+  interface: "any"  # Network interface to monitor (use "any" for all interfaces)
+  capture_filter: "ip"  # BPF filter for packet capture
+  
+# Detection Thresholds
+thresholds:
+  # Packet rate thresholds (packets per second)
+  max_pps_per_ip: 1000  # Maximum packets per second from single IP
+  max_pps_total: 10000  # Maximum total packets per second
+  
+  # Connection thresholds
+  max_connections_per_ip: 100  # Maximum concurrent connections per IP
+  max_connection_rate: 50  # New connections per second per IP
+  
+  # Traffic volume thresholds (bytes per second)
+  max_bps_per_ip: 1048576  # 1MB per second per IP
+  max_bps_total: 10485760  # 10MB per second total
+  
+  # Detection time windows (seconds)
+  time_window: 10  # Time window for rate calculations
+  detection_window: 60  # Time window for pattern analysis
+
+# Alert Settings
+alerts:
+  log_file: "dos_alerts.log"
+  console_output: true
+  alert_cooldown: 300  # Minimum seconds between alerts for same IP
+  
+# Pattern Analysis
+patterns:
+  enable_statistical_analysis: true
+  enable_behavioral_analysis: true
+  anomaly_threshold: 2.0  # Standard deviations from normal;
