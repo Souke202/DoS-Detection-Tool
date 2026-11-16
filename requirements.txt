@@ -1,9 +1,4 @@
-scapy==2.5.0
-numpy==1.24.3
-psutil==5.9.5
-matplotlib==3.7.1
-threading
-datetime
-logging
-json
-yaml
+scapy>=2.5.0
+numpy>=1.21.0
+psutil>=5.9.5
+PyYAML>=6.0

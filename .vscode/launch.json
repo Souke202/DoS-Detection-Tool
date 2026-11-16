@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run DoS Detection Tool",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/dos_detector.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}

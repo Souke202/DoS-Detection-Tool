@@ -2,7 +2,7 @@
 
 # Network Monitoring Settings
 network:
-  interface: "any"  # Network interface to monitor (use "any" for all interfaces)
+  interface: "Wi-Fi"  # Use a Windows adapter name; use "any" on Linux/macOS
   capture_filter: "ip"  # BPF filter for packet capture
   
 # Detection Thresholds

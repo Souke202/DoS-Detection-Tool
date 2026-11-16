@@ -67,6 +67,11 @@ Run with custom configuration:
 python3 dos_detector.py custom_config.yaml
 ```
 
+In VS Code, select **Run DoS Detection Tool** in the Run and Debug configuration
+list, then choose **Run Without Debugging** (Ctrl+F5). This runs the Python
+entry point; the YAML extension is for YAML editing and validation, not running
+the application.
+
 ## How It Works
 
 1. **Traffic Capture**: Uses Scapy to capture network packets in real-time
@@ -111,6 +116,11 @@ Check available interfaces:
 ```bash
 python3 -c "from scapy.all import get_if_list; print(get_if_list())"
 ```
+
+On Windows, install [Npcap](https://npcap.com/#download) to enable packet
+capture, then set `network.interface` in `config.yaml` to the adapter name
+(for example, `Wi-Fi`). The `any` interface value is for Linux/macOS, not
+Windows.
 
 ### High False Positives
 Adjust thresholds in `config.yaml` based on your network's normal traffic patterns.
